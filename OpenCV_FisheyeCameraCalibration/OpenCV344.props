@@ -2,7 +2,7 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros">
-    <OPENCV344>D:\dev\opencv-3.4.4\build\</OPENCV344>
+    <OPENCV344>E:\dev\opencv-3.4.4\build\</OPENCV344>
   </PropertyGroup>
   <PropertyGroup />
   <ItemDefinitionGroup>
