@@ -11,7 +11,7 @@ int main() {
 
 	std::cout << "入力する動画ファイル名：";
 	std::cin >> inputstr;
-	std::string inputFilePass = "resource/Movies/CameraCaribration/" + inputstr;
+	std::string inputFilePass = "../resource/Movies/CameraCaribration/" + inputstr;
 
 	// 入力となる動画ファイルを入力
 	cv::VideoCapture video(inputFilePass);
@@ -62,7 +62,7 @@ int main() {
 			object_points.push_back(obj);
 			image_points.push_back(centers);
 
-			cv::FileStorage fi("projects/point.yml", cv::FileStorage::WRITE);
+			cv::FileStorage fi("../projects/point.yml", cv::FileStorage::WRITE);
 			fi << "centers" << centers;
 			fi.release();
 
@@ -90,17 +90,13 @@ int main() {
 		cv::noArray(), cv::noArray(), cv::fisheye::CALIB_RECOMPUTE_EXTRINSIC | cv::fisheye::CALIB_CHECK_COND | cv::fisheye::CALIB_FIX_SKEW);
 
 	// mtx,distパラメータをファイルに書き出し
-	cv::FileStorage fs("projects/calibration.yml", cv::FileStorage::WRITE);
+	cv::FileStorage fs("../projects/calibration.yml", cv::FileStorage::WRITE);
 	fs << "camera_matrix" << camera_matrix;
 	fs << "distortion" << distortion;
 	fs.release();
 
 	std::cout << "camera_matrix:" << std::endl << camera_matrix << std::endl;
 	std::cout << "distortion:" << std::endl << distortion << std::endl;
-
-
-
-
 
 	return 0;
 }
